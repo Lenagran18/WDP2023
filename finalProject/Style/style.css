@@ -1,0 +1,107 @@
+header {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: large;
+}
+/* All text -- except navigation bar*/
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ef6089;
+    background-color: #E7CEE3;
+}
+h1 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 80px;
+    text-align: center;
+    background-color: #E7CEE3;
+    text-align: center;
+    background-image: url("/finalProject/Images/post-it.png");
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-position: top center;
+}
+/* Navigation bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #E7CEE3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*
+    text-align: center;
+    */
+}
+/*li {
+    float: center;
+    display: inline;
+} */
+li a {
+    display: block;
+    color: #ef6089;
+    padding: 12px 60px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+li a:hover {
+    background-color: #ef6089;
+    color: white;
+}
+/*form*/
+.registration-form {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 25%;
+    margin: 50px auto;
+    padding: 50px;
+    border: 10px solid #FFB8D1;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    background-color: #E7CEE3;
+    line-height: 1.4;
+}
+/* form labels */
+label {
+    display: block;
+    font-weight: bold;
+}
+/* text boxes and submit*/
+input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ef6089;
+    border-radius: 5px;
+    background-color: #E7CEE3;
+    line-height: 1.4;
+}
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ef6089;
+    border-radius: 4px;
+    background-color: #E7CEE3;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+/* Login button */
+input[type=submit] {
+    display: block;
+    width: 101%;
+    padding: 10px;
+    background-color: #E7CEE3;
+    color: #ef6089;
+    border: none;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: x-large;
+    text-align: center;
+    line-height: 1.4;
+}
+/* changes colors */
+input[type=submit]:hover {
+    color: white;
+    background-color: #ef6089;
+}
