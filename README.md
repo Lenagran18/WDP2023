@@ -7,4 +7,4 @@ A notes app that allows a user to:
 - Log in to account
 - Write a note
 - Post the note to save in the account
-![Entity Relationship Diagram with Business Rules](WPD2023)
+![Entity Relationship Diagram with Business Rules](WPD2023/ERD.LenaGran.pdf)
