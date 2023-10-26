@@ -8,4 +8,4 @@ A notes app that allows a user to:
 - Write a note
 - Post the note to save in the account
 ![ERD LenaGran](https://github.com/Lenagran18/WDP2023/assets/83826511/8efdd622-5544-48ea-916b-57840dac1e5c)
-![Relation](https://github.com/Lenagran18/WDP2023/assets/83826511/cf67772d-fb28-4856-ac55-b36fa0b3ca51)
+![Relation](https://github.com/Lenagran18/WDP2023/assets/83826511/becce775-0d7c-44a0-b9be-a95da7046581)
