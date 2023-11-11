@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Style/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="Scripts/notes.js"></script>
 </head>
 <body>
     <header>
@@ -24,13 +25,17 @@
     </header>
     <main>
             <div class="registration-form">
-            <label for="notes">Write a Message:</label>
-            <textarea id="subject" name="subject"></textarea>
-            <br>
-            <div>
-                <input type="submit" value="Post">
+                <form id="note-form">
+                    <label for="note">Write a Message:</label>
+                    <input type="text" id="note" required>
+                    <!--<textarea id="note" name="subject"></textarea> -->
+                    <br>
+                    <div>
+                        <input type="submit" value="Post">
+                    </div>
+                </form>
             </div>
-        </div>
+            <ul id="noteList"></ul>
     </main>
 </body>
 </html>

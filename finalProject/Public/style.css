@@ -15,7 +15,7 @@ h1 {
     text-align: center;
     background-color: #E7CEE3;
     text-align: center;
-    background-image: url("/finalProject/Images/post-it.png");
+    background-image: url("/finalProject/Public/Images/post-it.png");
     background-repeat: no-repeat;
     background-size: 200px;
     background-position: top center;
@@ -48,6 +48,12 @@ li a {
 li a:hover {
     background-color: #ef6089;
     color: white;
+}
+.welcome-message {
+    text-align: center;
+    padding-top: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
 }
 /*form*/
 .registration-form {

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="Style/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="Scripts/user.js"></script>
 </head>
 <body>
     <header>
@@ -15,9 +16,13 @@
                 <li><a href="login.html">Login</a></li>
                 <li><a href="register.html">Register</a></li>
             </ul>
+            
         </nav>
+        
     </header>
+    <div class ="welcome-message" id="welcome-message"></div>
     <main>
+        <form id="login-form">
         <div class="registration-form">
             <h2>Login</h2>
             <label for="username">Username</label>
@@ -29,6 +34,7 @@
             <br>
             <input type="submit" value="Login">
         </div>
+    </form>
     </main>
 </body>
 </html>
