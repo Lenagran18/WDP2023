@@ -35,5 +35,5 @@ function login(e){
         let password = document.getElementById("password").value;
 
         let welcomeMessage = document.getElementById('welcome-message');
-        welcomeMessage.innerHTML = `Welcome, ${username}!`;
+        welcomeMessage.innerHTML = `Welcome, ${username}!`<br>;
 }
