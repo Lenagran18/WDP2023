@@ -6,12 +6,15 @@ function createNote(e){
 
     let note = document.getElementById('note').value
     let noteList = document.getElementById("noteList")
-
-    let li = document.createElement('li')
-    li.innerText = note
-    noteList.appendChild(li);
-
+    
+    noteList.innerHTML += `<li>${note}</li>`
     document.getElementById('note').value=""
-    noteList.value = "";
 }
-console.log(`${note}`);
+//     let li = document.createElement('li')
+//     li.innerText = note
+//     noteList.appendChild(li);
+
+//     document.getElementById('note-form').value=""
+//     noteList.value = "";
+// }
+// console.log(`${note}`);

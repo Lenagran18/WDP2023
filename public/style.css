@@ -111,3 +111,8 @@ input[type=submit]:hover {
     color: white;
     background-color: #ef6089;
 }
+.error {
+    color: black;
+    text-align: center;
+    padding: 10px;
+  }
