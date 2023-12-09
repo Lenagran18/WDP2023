@@ -1,6 +1,5 @@
 // For Register & Login forms
 
-
 let loginForm = document.getElementById("login-form")
 if(loginForm) loginForm.addEventListener('submit', login)
 
@@ -11,9 +10,8 @@ function login(e){
     username: document.getElementById("username").value,
     password: document.getElementById("password").value
   }
-
-  // let welcomeMessage = document.getElementById('welcome-message');
-  // welcomeMessage.innerHTML = `Welcome, ${username}!`;
+// let welcomeMessage = document.getElementById('welcome-message');
+//welcomeMessage.innerHTML = `Welcome, ${username}!`;
 
   fetchData("/users/login", user, "POST")
   .then(data => {
@@ -28,7 +26,6 @@ function login(e){
     document.getElementById("password").value = ""
   })
 }
-
 
 // Fetch method implementation:
 async function fetchData(route = '', data = {}, methodType) {
@@ -59,15 +56,14 @@ if (registerForm) registerForm.addEventListener('submit', register);
 
 function register(e) {
     e.preventDefault();
-    
-    let fName = document.getElementById('fName').value;
-    let lName = document.getElementById('lName').value;
-    let username = document.getElementById('username').value;
-    let password = document.getElementById('password').value;
 
-    let newUser = new User(fName, lName, username, password);
+    let newUser = {
+      fName: document.getElementById("fName").value,
+      lName: document.getElementById("lName").value,
+      username: document.getElementById("username").value,
+      password: document.getElementById("password").value
+    }
 
     let welcomeMessage = document.getElementById('welcome-message');
-    welcomeMessage.innerHTML = `Welcome, ${username}!`;
+    welcomeMessage.innerHTML = `Welcome, ${fName}!`;
 }
-

@@ -8,7 +8,7 @@ async function createTable() {
         Content VARCHAR (255) NOT NULL,
         Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         CONSTRAINT NotePK PRIMARY KEY(NoteId),
-        CONSTRAINT UserFK FOREIGN KEY(UserID) REFERENCES User(UserID);`
+        CONSTRAINT UserFK FOREIGN KEY(UserId) REFERENCES User(UserId));`
   
         await con.query(sql);
     }

@@ -3,19 +3,19 @@ const con = require("./db_connect");
 async function createTable() {
   let sql = `
     CREATE TABLE IF NOT EXISTS users (
-      UserID INT NOT NULL AUTO_INCREMENT,
-      FirstName VARCHAR(255) NOT NULL, 
+      UserId INT NOT NULL AUTO_INCREMENT,
+      FirstName VARCHAR(255) NOT NULL,
       LastName VARCHAR(255) NOT NULL, 
       Username VARCHAR(50) NOT NULL, 
       Password VARCHAR(255) NOT NULL,
-      CONSTRAINT UserPK PRIMARY KEY(UserID):`
+      CONSTRAINT UserPK PRIMARY KEY(UserId));`
 
       await con.query(sql)
 }
 
 createTable()
 
-// Testing out login function
+// //Testing out login function
 // let newUser = {
 //   username: "cathy123",
 //   password: "icecream"
