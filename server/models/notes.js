@@ -21,18 +21,20 @@ async function createTable() {
 
 // Create a note
 async function createNote(userId, content) {
-    let noteResult = await GetNote(note.noteText)
-
     let sql = ` 
         INSERT INTO notes(UserID, Content)
         VALUES("${userId}", "${content}")
     `
 
     await con.query(sql)
+
+    let noteResult = await readNotes(userId)
+    return noteResult
+
 }
 
 // Read a note 
-async function readNote(userId) {
+async function readNotes(userId) {
     let sql = `
         SELECT * FROM notes
         WHERE UserId = ${userId}
@@ -63,4 +65,4 @@ async function deleteNote(noteId) {
 
     await con.query(sql)
 }
-module.exports = { createNote, readNote, updateNote, deleteNote }
+module.exports = { createNote, readNotes, updateNote, deleteNote }

@@ -27,11 +27,12 @@ createTable()
 
 // Create (Register) New User
 async function register(user) {
+  console.log(user)
   let userResult = await getUser(user.username)
   if(userResult.length > 0) throw Error("Username already in use!!")
 
   let sql = `
-    INSERT INTO users(UserName, Password, Email)
+    INSERT INTO users(Username, Password, Email)
     VALUES("${user.username}", "${user.password}", "${user.email}")
   `
 
@@ -42,7 +43,9 @@ async function register(user) {
 
 // Read - Login User 
 async function login(user) {
+  console.log("user entered: " + user.username)
   let userResult = await getUser(user.username)
+  console.log("User in db: " + userResult)
   if(!userResult[0]) throw Error("Username not found!!")
   if(userResult[0].Password != user.password) throw Error("Password Incorrect!!")
 
@@ -55,7 +58,7 @@ async function editUser(user) {
   if(updatedUser.length > 0) throw Error("Username not available!")
 
   let sql = `UPDATE users
-    SET UserName = "${user.username}"
+    SET Username = "${user.username}"
     WHERE UserId = ${user.UserId}
   `
   await con.query(sql)
@@ -75,7 +78,7 @@ async function deleteUser(user) {
 async function getUser(username) {
   let sql = `
     SELECT * FROM users 
-    WHERE UserName = "${username}" 
+    WHERE Username = "${username}" 
   `
   return await con.query(sql)
 }

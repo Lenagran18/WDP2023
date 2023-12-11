@@ -16,7 +16,7 @@ router
 // Create note route 
 .post('/createNote', async (req, res) => {
     try {
-        const note = await Note.createNote(req.body.content)
+        const note = await Note.createNote(req.body.userId, req.body.content)
         res.send(note)
     } catch(err) {
         res.status(401).send({message: err.message})
@@ -24,15 +24,24 @@ router
 })
 
 //Read route
-.get('/getNote', async (req, res) => {
+// .post('/getNote', async (req, res) => {
+//     try {
+//         const note = await Note.readNote(req.body.noteId);
+//         res.send(note)
+//     } catch(err) {
+//         res.status(401).send({message: err.message})
+//     }
+// })
+
+//Read all notes route (THIS MATTERS)
+.post('/getNotes', async (req, res) => {
     try {
-        const note = await Note.getNote(req.body.noteId);
+        const note = await Note.readNotes(req.body.userId);
         res.send(note)
     } catch(err) {
         res.status(401).send({message: err.message})
     }
 })
-
 //Update route
 .put('/updateNote', async (req, res) => {
     try {

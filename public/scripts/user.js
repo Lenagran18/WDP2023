@@ -16,6 +16,7 @@ function login(e){
   fetchData("/users/login", user, "POST")
   .then(data => {
     if(!data.message) {
+      console.log(data)
       window.location.href = "notes.html"
     }
   })
@@ -27,21 +28,6 @@ function login(e){
   })
 }
 
-// Fetch method implementation:
-async function fetchData(route = '', data = {}, methodType) {
-  const response = await fetch(`http://localhost:3000${route}`, {
-    method: methodType, // *POST, PUT, DELETE, etc.
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data) 
-  });
-  if(response.ok) {
-    return await response.json(); 
-  } else {
-    throw await response.json();
-  }
-} 
 // class User {
 //     constructor(firstName, lastName, username, password) {
 //         this.firstName = firstName;
@@ -64,6 +50,32 @@ function register(e) {
       password: document.getElementById("password").value
     }
 
+    fetchData("/users/register", newUser, "POST")
+    .then(data => {
+      if(!data.message) {
+        console.log(data)
+        window.location.href = "notes.html"
+      }
+    })
+    .catch(err => {
+      console.log(err)
+    })
     let welcomeMessage = document.getElementById('welcome-message');
-    welcomeMessage.innerHTML = `Welcome, ${fName}!`;
+    welcomeMessage.innerHTML = `Welcome, ${username}!`;
 }
+
+// Fetch method implementation:
+async function fetchData(route = '', data = {}, methodType) {
+  const response = await fetch(`http://localhost:3000${route}`, {
+    method: methodType, // *POST, PUT, DELETE, etc.
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data) 
+  });
+  if(response.ok) {
+    return await response.json(); 
+  } else {
+    throw await response.json();
+  }
+} 
