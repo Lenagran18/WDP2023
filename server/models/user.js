@@ -1,14 +1,14 @@
 const con = require("./db_connect");
 
 async function createTable() {
-  let sql = `
+    let sql = `
     CREATE TABLE IF NOT EXISTS users (
       UserId INT NOT NULL AUTO_INCREMENT,
       Username VARCHAR(50) NOT NULL, 
       Password VARCHAR(255) NOT NULL,
       CONSTRAINT UserPK PRIMARY KEY(UserId));`
 
-      await con.query(sql)
+    await con.query(sql)
 }
 
 createTable()
@@ -25,60 +25,60 @@ createTable()
 
 // Create (Register) New User
 async function register(user) {
-  console.log(user)
-  let userResult = await getUser(user.username)
-  if(userResult.length > 0) throw Error("Username already in use!!")
+    console.log(user)
+    let userResult = await getUser(user.username)
+    if (userResult.length > 0) throw Error("Username already in use!!")
 
-  let sql = `
+    let sql = `
     INSERT INTO users(Username, Password)
     VALUES("${user.username}", "${user.password}")
   `
 
-  await con.query(sql)
-  const newUser = await getUser(user.username)
-  return newUser[0]
+    await con.query(sql)
+    const newUser = await getUser(user.username)
+    return newUser[0]
 }
 
 // Read - Login User 
 async function login(user) {
-  console.log("user entered: " + user.username)
-  let userResult = await getUser(user.username)
-  console.log("User in db: " + userResult)
-  if(!userResult[0]) throw Error("Username not found!!")
-  if(userResult[0].Password != user.password) throw Error("Password Incorrect!!")
+    console.log("user entered: " + user.username)
+    let userResult = await getUser(user.username)
+    console.log("User in db: " + userResult)
+    if (!userResult[0]) throw Error("Username not found!!")
+    if (userResult[0].Password != user.password) throw Error("Password Incorrect!!")
 
-  return userResult[0]
+    return userResult[0]
 }
 
 // Update User
 async function editUser(user) {
-  let updatedUser = await getUser(user.username)
-  if(updatedUser.length > 0) throw Error("Username not available!")
+    let updatedUser = await getUser(user.username)
+    if (updatedUser.length > 0) throw Error("Username not available!")
 
-  let sql = `UPDATE users
+    let sql = `UPDATE users
     SET Username = "${user.username}"
     WHERE UserId = ${user.UserId}
   `
-  await con.query(sql)
-  updatedUser = await getUser(user.username)
-  return updatedUser[0]
+    await con.query(sql)
+    updatedUser = await getUser(user.username)
+    return updatedUser[0]
 }
 
 // Delete User 
 async function deleteUser(user) {
-  let sql = `DELETE FROM users
+    let sql = `DELETE FROM users
     WHERE UserId = ${user.UserId}
   `
-  await con.query(sql)
+    await con.query(sql)
 }
 
 // Useful functions
 async function getUser(username) {
-  let sql = `
+    let sql = `
     SELECT * FROM users 
     WHERE Username = "${username}" 
   `
-  return await con.query(sql)
+    return await con.query(sql)
 }
 
-module.exports = {login, register, editUser, deleteUser}
+module.exports = { login, register, editUser, deleteUser }

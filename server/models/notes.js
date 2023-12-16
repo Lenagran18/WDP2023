@@ -9,11 +9,11 @@ async function createTable() {
         Date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         CONSTRAINT NotePK PRIMARY KEY(NoteId),
         CONSTRAINT UserFK FOREIGN KEY(UserId) REFERENCES User(UserId));`
-  
-        await con.query(sql);
-    }
 
-    createTable()
+    await con.query(sql);
+}
+
+createTable()
 
 // CRUD Operations 
 
@@ -57,12 +57,13 @@ async function updateNote(noteId, content) {
 
 // Delete a note 
 
-async function deleteNote(noteId) {
+async function deleteNote(userId) {
     let sql = `
         DELETE FROM notes
-        WHERE NoteId = ${noteId}
+        WHERE UserId = ${userId}
     `
 
     await con.query(sql)
 }
+
 module.exports = { createNote, readNotes, updateNote, deleteNote }
