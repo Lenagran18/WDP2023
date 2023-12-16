@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+const path = require('path')
 
 app.use(express.json()); // parse JSON bodies 
 
@@ -14,6 +15,9 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");  
   next();
 });
+
+app.use(express.static(__dirname + "/public"))
+app.get('/', (req, res) => res.sendFile(path.join(__dirname + "/public/notes.html")))
 
 app.use('/users', userRoutes)
 app.use('/notes', notesRoutes)

@@ -5,37 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="scripts/notes.js"></script>
+    <!-- <script defer src="scripts/notes.js"></script> -->
 </head>
 <body>
     <header>
-        
         <div class="image">
             <h1><em>NOTE</em>ABLE</h1>
         </div>
-        </header>
-        </header>
-        <nav>
+        <!-- <nav>
             <ul>
                 <li><a href="notes.html" >Home</a></li>
                 <li><a href="login.html">Login</a></li>
                 <li><a href="register.html">Register</a></li>
             </ul>
-        </nav>
+        </nav> -->
+        <nav></nav>
     </header>
     <main>
-            <div class="registration-form">
-                <form id="note-form">
-                    <label for="note">Write a Message:</label>
-                    <input type="text" id="note" required>
-                    <!-- <textarea id="note" name="subject"></textarea> -->
-                    <br>
-                    <div>
-                        <input type="submit" value="createNote">
-                    </div>
-                </form>
-            </div>
-            <ul id="noteList"></ul>
+        <div class="registration-form">
+            <form id="note-form">
+                <label for="note">Write a Message:</label>
+                <input type="text" id="note" required>
+                <!-- <textarea id="note" name="subject"></textarea> -->
+                <br>
+                <div>
+                    <input type="submit" value="Create Note">
+                </div>
+            </form>
+        </div>
+        <ul id="noteList"></ul>
     </main>
+    <!-- <footer>
+        <ul class="fa-ul">
+          <li><i class="fa-solid fa-location-dot"></i> 123 Main Street, New Paltz, NY</li>
+          <li><i class="fa-solid fa-phone"></i> 845-555-5555</li>
+          <li><i class="fa-solid fa-envelope"></i> Noteable@fakemail.com</li>
+        </ul>
+        <h3><em>NOTE</em>ABLE &reg;</h3>
+      </footer> -->
+    <script type="module" src="./scripts/notes.js"></script>
+    <script type="module" src="./scripts/user.js"></script>
 </body>
 </html>

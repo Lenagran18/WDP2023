@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create an Account</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    
-    <!-- <script defer src="scripts/notes.js"></script>
-    <script defer src="scripts/user.js"></script> -->
 </head>
 <body>
     <header>
+        <div class="image"></div>
         <h1><em>NOTE</em>ABLE</h1>
         <!-- <nav>
             <ul>
@@ -20,22 +18,29 @@
             </ul>
         </nav> -->
         <nav></nav>
-        <div id="welcome-message"></div>
     </header>
     <main>
-        <div class="registration-form">
-            <form id="register-form" action=""><h2>Register</h2>
-                <p class="error"></p>
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username">
-                <br>
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password">
-                <br>
-                <br>
-                <input type="submit" value="Create Account">
-            </form>
+    <div class="registration-form">
+    <br>
+    <!-- edit form -->
+    <form id="edit-form">
+        <p class="error"></p>
+        <h2>Edit Profile</h2>
+        <div>
+            <label for="username">Username </label>
+            <input type="text" id="username">
         </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password">
+        </div>
+            <input type="submit" value="Submit">
+      </form>
+      <!-- delete form -->
+      <div>
+        <p class="error-del"></p>
+        <button class="btn">Delete Account</button>
+      </div>
     </main>
     <!-- <footer>
         <ul class="fa-ul">
@@ -44,7 +49,7 @@
             <li><i class="fa-solid fa-envelope"></i> Noteable@fakemail.com</li>
         </ul>
         <h3><em>NOTE</em>ABLE &reg;</h3>
-      </footer> -->
+    </footer> -->
     <script type="module" src="./scripts/notes.js"></script>
     <script type="module" src="./scripts/user.js"></script>
 </body>

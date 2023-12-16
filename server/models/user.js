@@ -4,8 +4,6 @@ async function createTable() {
   let sql = `
     CREATE TABLE IF NOT EXISTS users (
       UserId INT NOT NULL AUTO_INCREMENT,
-      FirstName VARCHAR(255) NOT NULL,
-      LastName VARCHAR(255) NOT NULL, 
       Username VARCHAR(50) NOT NULL, 
       Password VARCHAR(255) NOT NULL,
       CONSTRAINT UserPK PRIMARY KEY(UserId));`
@@ -32,8 +30,8 @@ async function register(user) {
   if(userResult.length > 0) throw Error("Username already in use!!")
 
   let sql = `
-    INSERT INTO users(Username, Password, Email)
-    VALUES("${user.username}", "${user.password}", "${user.email}")
+    INSERT INTO users(Username, Password)
+    VALUES("${user.username}", "${user.password}")
   `
 
   await con.query(sql)

@@ -5,40 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="scripts/user.js"></script>
-    <script defer src="scripts/notes.js"></script>
-
+    <!-- <script defer src="scripts/user.js"></script>
+    <script defer src="scripts/notes.js"></script> -->
 </head>
 <body>
     <header>
         <h1><em>NOTE</em>ABLE</h1>
-        <nav>
+        <!-- <nav>
             <ul>
                 <li><a href="notes.html" >Home</a></li>
                 <li><a href="login.html">Login</a></li>
                 <li><a href="register.html">Register</a></li>
             </ul>
-            
-        </nav>
-        
+        </nav> -->
+        <nav></nav>
     </header>
-    <div class ="welcome-message" id="welcome-message"></div>
-    <br>
+    <!-- <div class ="welcome-message" id="welcome-message"></div>
+    <br> -->
     <main>
-        <form id="login-form">
-            <p class="error"></p>
         <div class="registration-form">
-            <h2>Login</h2>
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username">
-            <br>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password">
-            <br>
-            <br>
-            <input type="submit" value="login">
+            <form id="login-form">
+                <p class="error"></p>
+                <h2>Login</h2>
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username">
+                <br>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+                <br>
+                <br>
+                <input type="submit" value="login">
+            </form>
         </div>
-    </form>
     </main>
+    <!-- <footer>
+    <ul class="fa-ul">
+        <li><i class="fa-solid fa-location-dot"></i> 123 Main Street, New Paltz, NY</li>
+        <li><i class="fa-solid fa-phone"></i> 845-555-5555</li>
+        <li><i class="fa-solid fa-envelope"></i> Noteable@fakemail.com</li>
+      </ul>
+      <h3><em>NOTE</em>ABLE &reg;</h3>
+    </footer> -->
+    <script type="module" src="./scripts/notes.js"></script>
+    <script type="module" src="./scripts/user.js"></script>
 </body>
 </html>
