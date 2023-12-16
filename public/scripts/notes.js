@@ -4,27 +4,35 @@ if (noteForm) noteForm.addEventListener('submit', createNote);
 function createNote(e){
     e.preventDefault();
 
+    let userId = getCurrentUserId();
+    if (!userId) {
+        console.log("User ID not found. User might not be logged in.");
+        return;
+    }
+
     let note = {
         "content": document.getElementById('note').value,
-        "userId": 1
+        "userId": userId
     }
-    let noteList = document.getElementById("noteList")
-    noteList.innerHTML=""
-    
+
+    console.log("Note to be created:", note); // Log the note before sending
+
     fetchData("/notes/createNote", note, "POST")
     .then(data => {
-        if(!data.message) {
-            console.log(data)
-            for(let i = 0; i<data.length; i++) {
-                noteList.innerHTML += `<li>${data[i].Content}</li></br>`
-                document.getElementById('note').value=""
-            }
+        console.log("Response Data:", data); // Log the response data
+        for(let i = 0; i<data.length; i++) {
+            noteList.innerHTML += `<li>${data[i].Content}</li></br>`
+            document.getElementById('note').value=""
+        // USE THIS INSTEAD IF YOU WANT TO RESTART NOTES LIST EACH TIME
+        // if(!data.message) {
+        //     let noteList = document.getElementById("noteList");
+        //     noteList.innerHTML += `<li>${data[data.length - 1].Content}</li><br>`;
+        //     document.getElementById('note').value = "";
         }
     })
     .catch(err => {
-        console.log(err)
+        console.log("Error:", err);
     })
-    
 }
 function getNotes(){
     let note = {"userId": 1}
@@ -97,6 +105,12 @@ export function logout() {
   localStorage.removeItem('user')
   window.location.href = "login.html"
 }
+function getCurrentUserId() {
+
+    const user = getCurrentUser();
+    return user ? user.UserId : null; // Assuming the userId is stored within the user object
+}
 
 let logoutBtn = document.getElementById("logout")
 if(logoutBtn) logoutBtn.addEventListener("click", logout)
+
